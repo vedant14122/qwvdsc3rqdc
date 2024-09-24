@@ -182,6 +182,199 @@ Client Options Page:
     </footer>
 </body>
 </html>
+Client Reward Gain:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards Dashboard - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .reward-list {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rewards Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Your Rewards</h2>
+        <div id="rewardResults" class="reward-list"></div>
+    </section>
+
+    <script>
+        // Simulated rewards data
+        const rewardsData = {
+            'Team A Token Owner 1': ['Free Merchandise', 'Discount Coupon'],
+            'Team A Token Owner 2': ['VIP Access'],
+            'Team B Token Owner 1': ['Free Merchandise'],
+            // Add more token owners and rewards as needed
+        };
+
+        // Simulate current user
+        const currentUser = 'Team A Token Owner 1'; // This would typically be dynamically determined
+
+        function displayRewards() {
+            const rewardResults = document.getElementById('rewardResults');
+            rewardResults.innerHTML = '';
+
+            const rewards = rewardsData[currentUser] || [];
+            if (rewards.length === 0) {
+                rewardResults.innerHTML = '<p>No rewards available.</p>';
+                return;
+            }
+
+            rewards.forEach(reward => {
+                rewardResults.innerHTML += `<p>${reward}</p>`;
+            });
+        }
+
+        // Call the display function on page load
+        displayRewards();
+    </script>
+</body>
+</html>
+Client Recieve Token Form:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, content='width=device-width, initial-scale=1.0'">
+    <title>Rewards Dashboard - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .reward-list {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .form-response {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background: #e7f3fe;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rewards Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Your Rewards</h2>
+        <div id="rewardResults" class="reward-list"></div>
+    </section>
+
+    <section>
+        <h2>Response to Forms</h2>
+        <div id="formResponses" class="form-response"></div>
+        <input type="text" id="responseData" placeholder="Enter your response">
+        <button onclick="submitResponse()">Submit Response</button>
+    </section>
+
+    <script>
+        // Simulated rewards data
+        const rewardsData = {
+            'Team A Token Owner 1': ['Free Merchandise', 'Discount Coupon'],
+            'Team A Token Owner 2': ['VIP Access'],
+            'Team B Token Owner 1': ['Free Merchandise'],
+        };
+
+        // Simulated forms data
+        const formsData = {
+            'Team A Token Owner 1': ['Form data 1 for Team A Owner 1'],
+            'Team B Token Owner 1': ['Form data 2 for Team B Owner 1'],
+        };
+
+        // Simulate current user
+        const currentUser = 'Team A Token Owner 1'; // This would typically be dynamically determined
+
+        function displayRewards() {
+            const rewardResults = document.getElementById('rewardResults');
+            rewardResults.innerHTML = '';
+
+            const rewards = rewardsData[currentUser] || [];
+            if (rewards.length === 0) {
+                rewardResults.innerHTML = '<p>No rewards available.</p>';
+                return;
+            }
+
+            rewards.forEach(reward => {
+                rewardResults.innerHTML += `<p>${reward}</p>`;
+            });
+
+            displayForms();
+        }
+
+        function displayForms() {
+            const formResponses = document.getElementById('formResponses');
+            formResponses.innerHTML = '';
+
+            const forms = formsData[currentUser] || [];
+            if (forms.length === 0) {
+                formResponses.innerHTML = '<p>No forms available.</p>';
+                return;
+            }
+
+            forms.forEach(form => {
+                formResponses.innerHTML += `<p>${form}</p>`;
+            });
+        }
+
+        function submitResponse() {
+            const responseData = document.getElementById('responseData').value;
+            // In a real application, you'd send this response to the server
+            alert(`Response submitted: ${responseData}`);
+            document.getElementById('responseData').value = '';
+        }
+
+        // Call the display function on page load
+        displayRewards();
+    </script>
+</body>
+</html>
 Client Styles:
 body {
     font-family: 'Arial', sans-serif;
@@ -378,6 +571,27 @@ Business Management Platform:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Token Management - FanU Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Simple modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -396,22 +610,313 @@ Business Management Platform:
             <div class="token">
                 <h3>Team A Token</h3>
                 <p>Current Price: $10</p>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button onclick="openEditModal('Team A Token', 10)">Edit</button>
+                <button onclick="deleteToken(this)">Delete</button>
             </div>
             <div class="token">
                 <h3>Team B Token</h3>
                 <p>Current Price: $12</p>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button onclick="openEditModal('Team B Token', 12)">Edit</button>
+                <button onclick="deleteToken(this)">Delete</button>
             </div>
             <!-- Add more tokens as needed -->
         </div>
     </section>
 
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Token</h3>
+            <label for="tokenName">Token Name:</label>
+            <input type="text" id="tokenName" disabled>
+            <label for="tokenPrice">Price:</label>
+            <input type="number" id="tokenPrice">
+            <button onclick="saveChanges()">Save</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        let currentTokenName = '';
+
+        function openEditModal(tokenName, tokenPrice) {
+            currentTokenName = tokenName;
+            document.getElementById('tokenName').value = tokenName;
+            document.getElementById('tokenPrice').value = tokenPrice;
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function saveChanges() {
+            const newPrice = document.getElementById('tokenPrice').value;
+            const tokens = document.querySelectorAll('.token');
+
+            tokens.forEach(token => {
+                if (token.querySelector('h3').textContent === currentTokenName) {
+                    token.querySelector('p').textContent = `Current Price: $${newPrice}`;
+                }
+            });
+
+            closeModal();
+        }
+
+        function deleteToken(button) {
+            const token = button.parentElement;
+            token.remove();
+        }
+    </script>
+</body>
+</html>
+Business Rewards Management:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Management - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Token Management</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="signup.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Manage Your Tokens</h2>
+        <div class="token-list">
+            <div class="token" data-token-id="1">
+                <h3>Team A Token</h3>
+                <p>Current Price: $10</p>
+            </div>
+            <div class="token" data-token-id="2">
+                <h3>Team B Token</h3>
+                <p>Current Price: $12</p>
+            </div>
+            <!-- Add more tokens as needed -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Assign Rewards to Token Holders</h2>
+        <div>
+            <label for="rewardName">Reward Name:</label>
+            <input type="text" id="rewardName">
+            <label for="numberOfRewards">Number of Rewards:</label>
+            <input type="number" id="numberOfRewards" min="1">
+            <button onclick="assignRewards()">Assign Rewards</button>
+        </div>
+        <div id="rewardResults"></div>
+    </section>
+
+    <script>
+        const tokenOwners = {
+            1: ['Team A Token Owner 1', 'Team A Token Owner 2'],
+            2: ['Team B Token Owner 1', 'Team B Token Owner 2'],
+            // Add more token IDs and owners as needed
+        };
+
+        function assignRewards() {
+            const rewardName = document.getElementById('rewardName').value;
+            const numberOfRewards = parseInt(document.getElementById('numberOfRewards').value);
+            const selectedOwners = [];
+
+            // Collect all token IDs
+            const tokenIds = Object.keys(tokenOwners);
+
+            // Randomly select token IDs and their owners
+            const chosenIds = selectRandomTokenIds(tokenIds, numberOfRewards);
+
+            chosenIds.forEach(id => {
+                const owners = tokenOwners[id];
+                const randomOwner = owners[Math.floor(Math.random() * owners.length)];
+                selectedOwners.push(randomOwner);
+            });
+
+            // Display results
+            const rewardResults = document.getElementById('rewardResults');
+            rewardResults.innerHTML = `<h3>Reward "${rewardName}" assigned to:</h3>`;
+            selectedOwners.forEach(owner => {
+                rewardResults.innerHTML += `<p>${owner}</p>`;
+            });
+        }
+
+        function selectRandomTokenIds(tokenIds, count) {
+            if (count > tokenIds.length) {
+                count = tokenIds.length; // Can't select more than available
+            }
+            const shuffled = tokenIds.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+    </script>
+</body>
+</html>
+Business Token Form Send:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Management - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Token Management</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="signup.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Manage Your Tokens</h2>
+        <div class="token-list">
+            <div class="token" data-token-id="1">
+                <h3>Team A Token</h3>
+                <p>Current Price: $10</p>
+            </div>
+            <div class="token" data-token-id="2">
+                <h3>Team B Token</h3>
+                <p>Current Price: $12</p>
+            </div>
+            <!-- Add more tokens as needed -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Assign Rewards to Token Holders</h2>
+        <div>
+            <label for="rewardName">Reward Name:</label>
+            <input type="text" id="rewardName">
+            <label for="numberOfRewards">Number of Rewards:</label>
+            <input type="number" id="numberOfRewards" min="1">
+            <button onclick="assignRewards()">Assign Rewards</button>
+        </div>
+        <div id="rewardResults"></div>
+    </section>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <h3>Send Form to Winner</h3>
+            <label for="formData">Form Data:</label>
+            <input type="text" id="formData" placeholder="Enter data for winner">
+            <button onclick="sendForm()">Send</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        const tokenOwners = {
+            1: ['Team A Token Owner 1', 'Team A Token Owner 2'],
+            2: ['Team B Token Owner 1', 'Team B Token Owner 2'],
+        };
+
+        const winnersData = {};
+
+        function assignRewards() {
+            const rewardName = document.getElementById('rewardName').value;
+            const numberOfRewards = parseInt(document.getElementById('numberOfRewards').value);
+            const selectedOwners = [];
+
+            const tokenIds = Object.keys(tokenOwners);
+            const chosenIds = selectRandomTokenIds(tokenIds, numberOfRewards);
+
+            chosenIds.forEach(id => {
+                const owners = tokenOwners[id];
+                const randomOwner = owners[Math.floor(Math.random() * owners.length)];
+                selectedOwners.push(randomOwner);
+                winnersData[randomOwner] = []; // Initialize empty array for forms
+            });
+
+            displayRewardResults(rewardName, selectedOwners);
+        }
+
+        function displayRewardResults(rewardName, selectedOwners) {
+            const rewardResults = document.getElementById('rewardResults');
+            rewardResults.innerHTML = `<h3>Reward "${rewardName}" assigned to:</h3>`;
+            selectedOwners.forEach(owner => {
+                rewardResults.innerHTML += `<p>${owner} <button onclick="openFormModal('${owner}')">Send Form</button></p>`;
+            });
+        }
+
+        function openFormModal(owner) {
+            currentOwner = owner;
+            document.getElementById('formModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('formModal').style.display = 'none';
+        }
+
+        function sendForm() {
+            const formData = document.getElementById('formData').value;
+            winnersData[currentOwner].push(formData);
+            alert(`Form sent to ${currentOwner}: ${formData}`);
+            closeModal();
+        }
+
+        function selectRandomTokenIds(tokenIds, count) {
+            if (count > tokenIds.length) {
+                count = tokenIds.length;
+            }
+            const shuffled = tokenIds.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+    </script>
 </body>
 </html>
 Business Styling:
