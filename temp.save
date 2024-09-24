@@ -1,0 +1,491 @@
+Client Home:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FanU Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#investments">Investments</a></li>
+                <li><a href="#signup">Sign Up/Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Engage with Your Team Like Never Before!</h2>
+        <p>Purchase tokens linked to your favorite college sports teams and unlock exclusive perks.</p>
+        <a href="#investments" class="btn">Explore Tokens</a>
+    </section>
+
+    <section id="about">
+        <h2>About FanU</h2>
+        <p>The FanU Platform enhances fan engagement and offers investment opportunities tied to team success.</p>
+    </section>
+
+    <section id="investments">
+        <h2>Available Tokens</h2>
+        <div class="token-list">
+            <div class="token">
+                <h3>Team A Token</h3>
+                <button>Buy Now</button>
+            </div>
+            <div class="token">
+                <h3>Team B Token</h3>
+                <button>Buy Now</button>
+            </div>
+            <div class="token">
+                <h3>Team C Token</h3>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup">
+        <h2>Sign Up / Login</h2>
+        <form action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Sign Up Here</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Client Invest Page:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Investments</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#signup">Sign Up/Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="investments">
+        <h2>Available Tokens</h2>
+        <div class="token-list">
+            <div class="token">
+                <h3>Team A Token</h3>
+                <p>Price: $10</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="token">
+                <h3>Team B Token</h3>
+                <p>Price: $12</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="token">
+                <h3>Team C Token</h3>
+                <p>Price: $8</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Client Options Page:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Teams</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="investments.html">Investments</a></li>
+                <li><a href="#signup">Sign Up/Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="teams">
+        <h2>Our Teams</h2>
+        <div class="team-list">
+            <div class="team">
+                <img src="team-a.jpg" alt="Team A Logo">
+                <h3>Team A</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+            <div class="team">
+                <img src="team-b.jpg" alt="Team B Logo">
+                <h3>Team B</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+            <div class="team">
+                <img src="team-c.jpg" alt="Team C Logo">
+                <h3>Team C</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+            <div class="team">
+                <img src="team-d.jpg" alt="Team D Logo">
+                <h3>Team D</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+            <div class="team">
+                <img src="team-e.jpg" alt="Team E Logo">
+                <h3>Team E</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+            <div class="team">
+                <img src="team-f.jpg" alt="Team F Logo">
+                <h3>Team F</h3>
+                <p>Purchase tokens and support your team!</p>
+                <button class="btn">View Tokens</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Client Styles:
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#teams {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.team {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.team:hover {
+    transform: scale(1.05);
+}
+
+.team img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.team h3 {
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.team p {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1e1e1e;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+Business Homepage:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Colleges - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FanU Platform for Colleges</h1>
+        <nav>
+            <ul>
+                <li><a href="signup.html">Sign Up/Login</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Empower Your Fans</h2>
+        <p>Join the FanU Platform to engage your fans and offer them exclusive tokens tied to your team.</p>
+        <a href="signup.html" class="btn">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Business signin Page:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up/Login - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sign Up / Login</h1>
+    </header>
+
+    <section>
+        <form action="#" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>New to FanU? <a href="#">Sign Up Here</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Business Dashboard:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="college-home.html">Home</a></li>
+                <li><a href="token-management.html">Token Management</a></li>
+                <li><a href="signup.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome, [College Name]</h2>
+        <p>Manage your tokens and engage with your fans effectively.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Business Management Platform:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Management - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Token Management</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="signup.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Manage Your Tokens</h2>
+        <div class="token-list">
+            <div class="token">
+                <h3>Team A Token</h3>
+                <p>Current Price: $10</p>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+            <div class="token">
+                <h3>Team B Token</h3>
+                <p>Current Price: $12</p>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+            <!-- Add more tokens as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Business Styling:
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1e1e1e;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.token-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.token {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
