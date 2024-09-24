@@ -74,6 +74,31 @@ Client Invest Page:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investments - FanU Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .token-list {
+            margin-top: 20px;
+        }
+        .token {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #fff;
+        }
+        #searchBar {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -89,18 +114,19 @@ Client Invest Page:
 
     <section id="investments">
         <h2>Available Tokens</h2>
-        <div class="token-list">
-            <div class="token">
+        <input type="text" id="searchBar" placeholder="Search for tokens..." onkeyup="filterTokens()">
+        <div class="token-list" id="tokenList">
+            <div class="token" data-token-name="Team A Token">
                 <h3>Team A Token</h3>
                 <p>Price: $10</p>
                 <button>Buy Now</button>
             </div>
-            <div class="token">
+            <div class="token" data-token-name="Team B Token">
                 <h3>Team B Token</h3>
                 <p>Price: $12</p>
                 <button>Buy Now</button>
             </div>
-            <div class="token">
+            <div class="token" data-token-name="Team C Token">
                 <h3>Team C Token</h3>
                 <p>Price: $8</p>
                 <button>Buy Now</button>
@@ -111,6 +137,152 @@ Client Invest Page:
     <footer>
         <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function filterTokens() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const tokens = document.querySelectorAll('.token');
+
+            tokens.forEach(token => {
+                const tokenName = token.getAttribute('data-token-name').toLowerCase();
+                if (tokenName.includes(searchInput)) {
+                    token.style.display = '';
+                } else {
+                    token.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+Client Payment Page:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Payments - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .payment-form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Business Payments</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#signup">Sign Up/Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Process Payment</h2>
+        <div class="payment-form">
+            <label for="purchaseName">Purchase Name:</label>
+            <input type="text" id="purchaseName" placeholder="Enter Purchase Name" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" placeholder="Enter Quantity" required>
+
+            <label for="tokenPrice">Token Price:</label>
+            <input type="number" id="tokenPrice" placeholder="Enter Token Price" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+
+            <label for="cardName">Cardholder Name:</label>
+            <input type="text" id="cardName" placeholder="Enter Cardholder Name" required>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="number" id="cardNumber" placeholder="Enter Card Number" required>
+
+            <label for="expiryDate">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiryDate" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="number" id="cvv" placeholder="Enter CVV" required>
+
+            <button onclick="processPayment()">Pay Now</button>
+        </div>
+        <div id="paymentResult"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function generateTokenName(purchaseName, username, quantity) {
+            // Format the quantity to be 5 digits
+            const paddedQuantity = String(quantity).padStart(5, '0');
+            return `${purchaseName}${username}${paddedQuantity}`;
+        }
+
+        function processPayment() {
+            const purchaseName = document.getElementById('purchaseName').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const tokenPrice = parseFloat(document.getElementById('tokenPrice').value);
+            const username = document.getElementById('username').value;
+            const cardName = document.getElementById('cardName').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Check that all fields are filled
+            if (purchaseName && quantity && tokenPrice && username && cardName && cardNumber && expiryDate && cvv) {
+                // Calculate the fee (0.05%)
+                const fee = tokenPrice * 0.0005;
+                const amountToReceive = tokenPrice - fee;
+
+                // Generate the custom token name
+                const tokenName = generateTokenName(purchaseName, username, quantity);
+
+                document.getElementById('paymentResult').innerHTML = 
+                    `<p>Payment of $${tokenPrice.toFixed(2)} for ${tokenName} processed successfully!</p>
+                     <p>Your amount received after our fee: $${amountToReceive.toFixed(2)}</p>
+                     <p>Your Token Name: ${tokenName}</p>`;
+            } else {
+                document.getElementById('paymentResult').innerHTML = 
+                    `<p>Please fill in all fields.</p>`;
+            }
+        }
+    </script>
 </body>
 </html>
 Client Options Page:
@@ -915,6 +1087,118 @@ Business Token Form Send:
             }
             const shuffled = tokenIds.sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
+        }
+    </script>
+</body>
+</html>
+Business Payment Recieving:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Payments - FanU Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .payment-form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Business Payments</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#signup">Sign Up/Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Process Payment</h2>
+        <div class="payment-form">
+            <label for="tokenName">Token Name:</label>
+            <input type="text" id="tokenName" placeholder="Enter Token Name" required>
+
+            <label for="tokenPrice">Token Price:</label>
+            <input type="number" id="tokenPrice" placeholder="Enter Token Price" required>
+
+            <label for="cardName">Cardholder Name:</label>
+            <input type="text" id="cardName" placeholder="Enter Cardholder Name" required>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="number" id="cardNumber" placeholder="Enter Card Number" required>
+
+            <label for="expiryDate">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiryDate" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="number" id="cvv" placeholder="Enter CVV" required>
+
+            <button onclick="processPayment()">Pay Now</button>
+        </div>
+        <div id="paymentResult"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FanU Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function processPayment() {
+            const tokenName = document.getElementById('tokenName').value;
+            const tokenPrice = parseFloat(document.getElementById('tokenPrice').value);
+            const cardName = document.getElementById('cardName').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Check that all fields are filled
+            if (tokenName && tokenPrice && cardName && cardNumber && expiryDate && cvv) {
+                // Calculate the fee (0.05%)
+                const fee = tokenPrice * 0.0005;
+                const amountToReceive = tokenPrice - fee;
+
+                document.getElementById('paymentResult').innerHTML = 
+                    `<p>Payment of $${tokenPrice.toFixed(2)} for ${tokenName} processed successfully!</p>
+                     <p>Your amount received after our fee: $${amountToReceive.toFixed(2)}</p>`;
+            } else {
+                document.getElementById('paymentResult').innerHTML = 
+                    `<p>Please fill in all fields.</p>`;
+            }
         }
     </script>
 </body>
